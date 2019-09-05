@@ -52,7 +52,14 @@ def downlane():
     turtle.pen(pencolor="black", pensize=1,pendown="False")
     turtle.penup()
 
-
+    turtle.penup()
+    turtle.goto(0,80)
+    turtle.setheading(0)
+    turtle.pen(pencolor="#820511", pensize=8,pendown="True")
+    turtle.fd(500)
+    turtle.pen(pencolor="black", pensize=1,pendown="True")
+    turtle.penup()
+    
 def music_node_single(i,k=35,j=58):
     turtle.setheading(0)
     turtle.penup()
@@ -111,8 +118,29 @@ def single_combine(i1,j1,i2,j2):
 
     turtle.fd(math.sqrt(500))
     
-    
 
+def plant_stem(i,h=18):
+    turtle.penup()
+    turtle.goto(i,80)
+    turtle.setheading(90)
+    turtle.pen(pencolor="#820511", pensize=9,pendown="True")
+    turtle.fd(h-5)
+    turtle.pen(pencolor="#820511", pensize=8,pendown="True")
+    turtle.fd(5)
+
+    turtle.penup()
+    turtle.goto(i-10,80+h+5)
+    turtle.setheading(270)
+    turtle.pen(pencolor="#820511", pensize=5,pendown="True")
+    turtle.fd((h/2)-3)
+    turtle.circle(5,90)
+    
+    turtle.goto(i+4,78+h/2)
+    turtle.setheading(0)
+    turtle.circle(5,90)
+    turtle.setheading(90)
+    turtle.fd((h/2)-3)
+    
 ########################    CALLING FUNCTIONS   ######################
 downlane()
 wheel()
@@ -137,4 +165,9 @@ music_node_single(470)
 music_node_single(490,25,50)
 single_combine(470,60,490,50)
 
+plant_stem(135)
+
+plant_stem(200,20)
+
+plant_stem(400,23)
 turtle.ht()
