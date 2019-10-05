@@ -140,11 +140,67 @@ def plant_stem(i,h=18):
     turtle.circle(5,90)
     turtle.setheading(90)
     turtle.fd((h/2)-3)
+
+
+def lastman():
+    turtle.penup()
+    turtle.goto(430,90)
+    turtle.setheading(270)
+    turtle.pen(pencolor="#820511", pensize=11,pendown="True")
+    turtle.fd(2)
+
+    turtle.pen(pencolor="#820511", pensize=3,pendown="True")
+    turtle.goto(427,88)
+    turtle.fd(7)
+
+    turtle.penup()
+    turtle.goto(433,88)
+    turtle.pen(pencolor="#820511", pensize=3,pendown="True")
+    turtle.fd(7)
+
+
+def flower():
+    turtle.penup()
+    turtle.goto(475,146)
+    turtle.setheading(0)
+    turtle.right(30)
+    
+    turtle.fillcolor('yellow')
+    turtle.begin_fill()
+    turtle.circle(5)
+    turtle.end_fill()
+
+    turtle.goto(477,150)
+    turtle.setheading(0)
+    turtle.right(30)
+    size = 2
+    for i in range(6):
+        turtle.pen(pencolor="#02c2b2", pensize=size,pendown="True")
+        turtle.fd(4)
+        size=size+1
+
+def pallette(x=300,y=100,s_angle=30,e_angle=60,length=50,fill_color='red'):
+    turtle.penup()
+    turtle.goto(x,y)
+    turtle.setheading(0)
+    turtle.left(s_angle)
+    turtle.pen(pencolor=fill_color, pensize=1,pendown="True")
+    
+    turtle.fillcolor(fill_color)
+    turtle.begin_fill()    
+    turtle.fd(length)
+    #turtle.left(90)
+    turtle.circle(2,180)
+    turtle.goto(x,y)
+    turtle.end_fill()
+
+    
+
+
     
 ########################    CALLING FUNCTIONS   ######################
 downlane()
 wheel()
-
 music_node_single(120)
 music_node_dot(120)
 
@@ -169,5 +225,14 @@ plant_stem(135)
 
 plant_stem(200,20)
 
+lastman()
+
 plant_stem(400,23)
+
+flower()
+pallette(473,150,160,200,15,"#cf2e02")
+
+
 turtle.ht()
+
+
