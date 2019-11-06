@@ -1,8 +1,39 @@
+#                                                           Imports needed
+import pygame
 import turtle
 import math
+import time
+
+# for music
+pygame.mixer.init()
+pygame.init()
+
+screen_width = 10
+screen_height = 10
+# Creating window
+gameWindow = pygame.display.set_mode((screen_width, screen_height))
+
+########################    Welcome Screen    ###################3
+def welcome():
+    turtle.title("Welcome Screen")
+    screen = turtle.Screen()
+    screen.addshape("welcome_img.gif")
+    turtle.shape("welcome_img.gif")
+    time.sleep(5)
+    turtle.clearscreen()
+welcome()
+
+#########################  Background music  #####################
+pygame.mixer.music.load("background_music.mp3")
+pygame.mixer.music.play()
+
+##########################    Starting  Picture  ###########################
 
 turtle.setworldcoordinates(0,0,500,300)
-turtle.bgcolor("#9e0e98")
+turtle.title("Computer Graphics Project")
+turtle.colormode(255)
+turtle.bgcolor(158, 14, 128)
+turtle.colormode(1)
 turtle.penup()
 turtle.speed(0)
 
@@ -190,15 +221,64 @@ def pallette(x=300,y=100,s_angle=30,e_angle=60,length=50,fill_color='red'):
     turtle.begin_fill()    
     turtle.fd(length)
     #turtle.left(90)
-    turtle.circle(2,180)
+
+    turtle.right(30)
+    
+    turtle.circle(4,180)
     turtle.goto(x,y)
     turtle.end_fill()
 
-    
+def colors(n):
+    color_list = ["#89118f","#67e0de","#ab005e","#153b0c","#086666"]
+    index = n%len(color_list)
+    return color_list[index]
+
+def forward(x):
+    for i in range (x//2):
+        turtle.forward(2)
+        turtle.bgcolor(colors(i))
+        time.sleep(0.08)
+
+def backward(x):
+    for i in range (x//2):
+        turtle.backward(2)
+        turtle.bgcolor(colors(i))
+        time.sleep(0.08)
+
+def upward(x):
+    turtle.setheading(0)
+    turtle.left(90)
+    for i in range (x//2):
+        turtle.forward(2)    
+        time.sleep(0.08)
+
+def downward(x):
+    turtle.setheading(0)
+    turtle.right(90)
+    for i in range (x//2):
+        turtle.forward(2)    
+        time.sleep(0.08)
 
 
+def show():
+    turtle.penup()
+    turtle.goto(285,195)
+    screen = turtle.Screen()
+    #screen.bgpic("bgimg1.gif")
+    screen.addshape("bgimg1.gif")
+    turtle.shape("bgimg1.gif")
     
+    turtle.speed(3)    
+    turtle.setheading(0)    
+    for i in range(3):
+        forward(30)
+        time.sleep(0.5)        
+        backward(30)
+        time.sleep(0.5)
+    turtle.bgcolor("#9e0e80")
+        
 ########################    CALLING FUNCTIONS   ######################
+
 downlane()
 wheel()
 music_node_single(120)
@@ -211,6 +291,10 @@ music_node_single(180,25,50)
 music_node_single(200)
 single_combine(180,50,200,60)
 
+music_node_single(250,25,50)
+music_node_single(270)
+single_combine(250,50,200,60)
+
 music_node_single(400,45,70)
 music_node_dot(400,70)
 
@@ -221,18 +305,21 @@ music_node_single(470)
 music_node_single(490,25,50)
 single_combine(470,60,490,50)
 
+
 plant_stem(135)
 
-plant_stem(200,20)
+plant_stem(180,20)
 
 lastman()
 
 plant_stem(400,23)
 
 flower()
-pallette(473,150,160,200,15,"#cf2e02")
+pallette(478,150,210,200,20,"#cf2e02") 
+pallette(478,150,185,200,20,"#cf2e02")    
+pallette(478,150,160,200,20,"#cf2e02")
+pallette(478,150,135,200,20,"#cf2e02")
+pallette(478,150,110,200,20,"#cf2e02")
 
-
-turtle.ht()
-
-
+show()
+pygame.quit()
