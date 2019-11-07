@@ -172,7 +172,7 @@ def plant_stem(i,h=18):
     turtle.setheading(90)
     turtle.fd((h/2)-3)
 
-
+'''
 def lastman():
     turtle.penup()
     turtle.goto(430,90)
@@ -189,6 +189,7 @@ def lastman():
     turtle.pen(pencolor="#820511", pensize=3,pendown="True")
     turtle.fd(7)
 
+'''
 
 def flower():
     turtle.penup()
@@ -262,7 +263,7 @@ def downward(x):
 
 def show():
     turtle.penup()
-    turtle.goto(285,195)
+    turtle.goto(285,192)
     screen = turtle.Screen()
     #screen.bgpic("bgimg1.gif")
     screen.addshape("bgimg1.gif")
@@ -310,9 +311,9 @@ plant_stem(135)
 
 plant_stem(180,20)
 
-lastman()
 
 plant_stem(400,23)
+plant_stem(440)
 
 flower()
 pallette(478,150,210,200,20,"#cf2e02") 
