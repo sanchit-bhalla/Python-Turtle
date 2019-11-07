@@ -173,22 +173,6 @@ def plant_stem(i,h=18):
     turtle.fd((h/2)-3)
 
 
-def lastman():
-    turtle.penup()
-    turtle.goto(430,90)
-    turtle.setheading(270)
-    turtle.pen(pencolor="#820511", pensize=11,pendown="True")
-    turtle.fd(2)
-
-    turtle.pen(pencolor="#820511", pensize=3,pendown="True")
-    turtle.goto(427,88)
-    turtle.fd(7)
-
-    turtle.penup()
-    turtle.goto(433,88)
-    turtle.pen(pencolor="#820511", pensize=3,pendown="True")
-    turtle.fd(7)
-
 
 def flower():
     turtle.penup()
@@ -310,9 +294,11 @@ plant_stem(135)
 
 plant_stem(180,20)
 
-lastman()
+plant_stem(290,20)
+plant_stem(330)
 
 plant_stem(400,23)
+plant_stem(440)
 
 flower()
 pallette(478,150,210,200,20,"#cf2e02") 
