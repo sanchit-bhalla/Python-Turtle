@@ -21,7 +21,7 @@ def welcome():
     turtle.shape("welcome_img.gif")
     time.sleep(5)
     turtle.clearscreen()
-welcome()
+#welcome()
 
 #########################  Background music  #####################
 pygame.mixer.music.load("background_music.mp3")
@@ -271,12 +271,62 @@ def show():
     
     turtle.speed(3)    
     turtle.setheading(0)    
-    for i in range(3):
+    for i in range(2):
         forward(30)
         time.sleep(0.5)        
         backward(30)
         time.sleep(0.5)
     turtle.bgcolor("#9e0e80")
+
+def applause():
+    time.sleep(2)
+    t2 = turtle.Turtle()
+    t2.penup()
+    i2 = 470
+    j2=260
+    t2.goto(i2,j2)
+    screen2 = turtle.Screen()
+    screen2.addshape("rose.gif")
+    t2.shape("rose.gif")
+
+     ####################    CHANGING MUSIC  #######################
+    pygame.mixer.music.load("applause.mp3")
+    pygame.mixer.music.play()
+   ##############################################################
+    t3 = turtle.Turtle()
+    t3.penup()
+    i3=150
+    j3=100
+    t3.goto(i3,j3)
+    screen = turtle.Screen()
+    screen.addshape("balloons.gif")
+    t3.shape("balloons.gif")
+
+    t4 = turtle.Turtle()
+    t4.penup()
+    i4=450
+    j4=180
+    t4.goto(i4,j4)
+    screen = turtle.Screen()
+    screen.addshape("balloons.gif")
+    t4.shape("balloons.gif")
+
+    t5 = turtle.Turtle()
+    t5.penup()
+    i5=200
+    j5=200
+    t5.goto(i5,j5)
+    screen = turtle.Screen()
+    screen.addshape("fireworks.gif")
+    t5.shape("fireworks.gif")
+
+    for i in range(70):
+        t3.goto(i3,j3)
+        t4.goto(i4,j4)
+        j3=j3+2
+        j4=j4+1
+        time.sleep(0.08)
+
         
 ########################    CALLING FUNCTIONS   ######################
 
@@ -322,5 +372,7 @@ pallette(478,150,160,200,20,"#cf2e02")
 pallette(478,150,135,200,20,"#cf2e02")
 pallette(478,150,110,200,20,"#cf2e02")
 
-show()
+show()    
+applause()
+    
 pygame.quit()
